@@ -11,25 +11,31 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+
+    <!-- Menu fixo no topo -->
     <header>
-        <h1>Inteligência Artificial (IA)</h1>
-        <p>Explorando o que é IA, sua história, funcionalidades e o futuro que nos espera.</p>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>IA Moderna</h1>
+            </div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#historia">História da IA</a></li>
+                <li><a href="#tipos">Tipos de IA</a></li>
+                <li><a href="#funcionalidades">Funcionalidades</a></li>
+                <li><a href="#aplicacoes">Aplicações da IA</a></li>
+                <li><a href="#estudos-caso">Estudos de Caso</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#desafios">Desafios</a></li>
+                <li><a href="#futuro">Futuro da IA</a></li>
+                <li><a href="#etica">Ética</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#historia">História da IA</a></li>
-            <li><a href="#tipos">Tipos de IA</a></li>
-            <li><a href="#funcionalidades">Funcionalidades</a></li>
-            <li><a href="#aplicacoes">Aplicações da IA</a></li>
-            <li><a href="#estudos-caso">Estudos de Caso</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#desafios">Desafios e Riscos</a></li>
-            <li><a href="#futuro">Futuro da IA</a></li>
-            <li><a href="#etica">Ética em IA</a></li>
-            <li><a href="#videos">Vídeos</a></li>
-        </ul>
-    </nav>
+
     <main>
         <section id="home" class="hidden">
             <h2>Introdução</h2>
@@ -106,9 +112,19 @@
             </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 - Apresentação sobre Inteligência Artificial</p>
     </footer>
+
     <script src="src/js/script.js"></script>
+    <script>
+        // Adiciona o evento de clique para fechar o menu ao clicar em uma opção
+        document.querySelectorAll('.menu li a').forEach(item => {
+            item.addEventListener('click', function() {
+                document.getElementById('menu-toggle').checked = false; // Fecha o menu
+            });
+        });
+    </script>
 </body>
 </html>
