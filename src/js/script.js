@@ -58,4 +58,3 @@ const appChart = new Chart(ctx, {
         }
     }
 });
-

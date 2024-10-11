@@ -2,104 +2,103 @@
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding-top: 80px; /* Para garantir que o conteúdo não fique por baixo do menu fixo */
+    padding: 0;
     background-color: #121212;
     color: #f5f5f5;
 }
 
-/* Menu moderno fixo no topo */
-.navbar {
-    background-color: #333;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    padding: 10px 0;
+header {
+    background: linear-gradient(90deg, #4e54c8, #8f94fb);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.logo {
-    float: left;
-    color: white;
-    padding-left: 20px;
-    font-size: 24px;
-    font-weight: bold;
+nav {
+    background: #333;
 }
 
-.menu {
+/* Estilos para o menu toggle */
+#menuToggle {
+    display: none;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+}
+
+#menuToggle input {
+    display: none;
+}
+
+#menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    background-color: white;
+    border-radius: 3px;
+    transition: transform 0.3s ease;
+}
+
+#menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+}
+
+#menu li {
+    padding: 10px;
+    text-align: center;
+}
+
+#menuToggle input:checked ~ ul {
+    display: block;
+}
+
+/* Exibir menu toggle em dispositivos menores */
+@media screen and (max-width: 768px) {
+    #menuToggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+}
+
+/* Outros estilos de navegação */
+nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    padding: 15px 0;
     display: flex;
     justify-content: center;
 }
 
-.menu li {
+nav ul li {
     margin: 0 15px;
 }
 
-.menu li a {
+nav a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    padding: 8px 16px;
-    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
 }
 
-.menu li a:hover {
-    background-color: #4e54c8;
-    border-radius: 5px;
-    transform: scale(1.05);
+nav a:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
 }
 
-/* Ícone para dispositivos móveis */
-.menu-icon {
-    display: none;
-    font-size: 28px;
-    color: white;
-    padding-right: 20px;
-    cursor: pointer;
-    float: right;
-    margin-top: 5px; /* Ajuste de margem para centralizar melhor o ícone */
-}
-
-/* Compatibilidade com dispositivos móveis */
-@media screen and (max-width: 768px) {
-    .menu {
-        display: none;
-        flex-direction: column;
-        background-color: #333;
-        position: absolute;
-        top: 50px;
-        width: 100%;
-        left: 0;
-        border-radius: 5px; /* Bordas arredondadas para o menu */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para o menu */
-    }
-
-    .menu li {
-        text-align: center;
-        margin: 0;
-        border-bottom: 1px solid #444; /* Linha entre itens */
-    }
-
-    .menu li:last-child {
-        border-bottom: none; /* Remove a linha do último item */
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-    #menu-toggle:checked + .menu-icon + .menu {
-        display: flex;
-    }
-}
-
-/* Oculte a caixa de seleção */
-#menu-toggle {
-    display: none; /* Isso oculta a caixa de marcação */
+main {
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 section {
